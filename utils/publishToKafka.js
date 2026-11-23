@@ -7,7 +7,7 @@ const kafka = new Kafka({
   clientId: "condense-data-service-" + Date.now(), // Append Current Epoch milliseconds for Random Id
   brokers: [
     process.env.KAFKA_BOOTSTRAP_SERVER_URL ||
-      "my-cluster-kafka-bootstrap.kafka:9092",
+    "my-cluster-kafka-bootstrap.kafka:9092",
   ],
   sasl: {
     mechanism: "scram-sha-512",

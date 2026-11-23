@@ -5,6 +5,12 @@ import { startTlematicsSimulator } from "./utils/telematicsDataSimulator.js";
 import { startWearableSimulator } from "./utils/wearableDataSimulator.js";
 import { soilDataSimulatior } from "./utils/soilSensorDataSimulator.js";
 import { creditCardDataSimulator } from "./utils/creditCardDataSimulator.js";
+import { fleetDataSimulator } from "./utils/fleetTracking.js"
+import { vehicleHealthSimulator } from "./utils/vehicleHealthAndMaintenance.js"
+import { geofenceDataSimulator } from "./utils/geofenceDataSimulator.js"
+import { evBatteryDataSimulator } from "./utils/evDataSimulator.js"
+import { driverDataSimulator } from "./utils/driverBehaviorDataSimulator.js";
+import { logisticsDataSimulator } from "./utils/logisticsAndLastMileDataSimulator.js"
 import "./logger.js";
 
 if (process.env.DATA_SIMULATOR === "true") {
@@ -39,6 +45,18 @@ if (process.env.DATA_SIMULATOR === "true") {
     console.info("Credit Card Simulation is enabled");
     // Add your credit card simulation code here
     creditCardDataSimulator();
+  } else if (process.env.FLEET_TRACKING_AND_MANAGEMENT === "true") {
+    fleetDataSimulator();
+  } else if (process.env.VEHICLE_HEALTH_AND_PREDICTIVE_MAINTENANCE === "true") {
+    vehicleHealthSimulator();
+  } else if (process.env.GEOFENCE_EVENTS === "true") {
+    geofenceDataSimulator();
+  } else if (process.env.EV_BATTERY_DATA_SIMULATOR === "true") {
+    evBatteryDataSimulator();
+  } else if (process.env.DRIVER_BEHAVIOR_AND_SAFETY_SIMULATOR === "true") {
+    driverDataSimulator();
+  } else if (process.env.LOGISTICS_DATA_SIMULATOR === "true") {
+    logisticsDataSimulator();
   } else {
     startTlematicsSimulator();
   }
