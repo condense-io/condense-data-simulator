@@ -273,24 +273,19 @@ const generateFleetData = (vehicleId) => {
 // Start simulator
 export const fleetDataSimulator = () => {
     console.info("Starting Fleet Data Simulator...");
-
     initializeVehicles();
-
     setInterval(async () => {
         for (const vehicleId of assets) {
             try {
                 const data = generateFleetData(vehicleId);
-
                 console.info(
                     `Telemetry generated for ${vehicleId}:`,
                     data
                 );
-
                 await publishKafka(
                     JSON.stringify(data),
                     data.asset_id
                 );
-
             } catch (error) {
                 console.error(
                     `Fleet simulator error for ${vehicleId}:`,
@@ -299,8 +294,4 @@ export const fleetDataSimulator = () => {
             }
         }
     }, INTERVAL_MS);
-
-    console.info(
-        `Fleet simulator running. Interval: ${INTERVAL_MS}ms`
-    );
 };

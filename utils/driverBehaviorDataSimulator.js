@@ -442,13 +442,7 @@ async function simulateDriverData() {
 
             console.info(
                 `[DRIVER TELEMETRY] ${data.asset_id}`,
-                {
-                    driver: data.driver_id,
-                    speed: data.speed_kmh,
-                    scenario: vehicleStates.get(data.asset_id).scenario,
-                    phoneDetected: data.driver_monitoring.phone_detected,
-                    eyesClosed: data.driver_monitoring.eyes_closed,
-                }
+                data
             );
         } catch (error) {
             console.error(

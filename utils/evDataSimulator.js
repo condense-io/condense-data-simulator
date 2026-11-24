@@ -472,12 +472,7 @@ async function simulateEVData() {
 
             console.info(
                 `[EV TELEMETRY] ${data.asset_id}`,
-                {
-                    soc: data.battery.state_of_charge_pct,
-                    soh: data.battery.state_of_health_pct,
-                    charging: data.charging.is_charging,
-                    power: data.charging.charging_power_kw,
-                }
+                data
             );
         } catch (error) {
             console.error(

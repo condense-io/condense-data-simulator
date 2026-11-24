@@ -502,14 +502,7 @@ async function simulateDeliveryData() {
 
             console.info(
                 `[DELIVERY TELEMETRY] ${data.asset_id}`,
-                {
-                    job: data.delivery_job_id,
-                    stop: `${data.route.current_stop_sequence}/${data.route.total_stops}`,
-                    speed: data.vehicle.speed_kmh,
-                    progress: round(state.job.route_progress_km),
-                    completed: state.job.completed_stops,
-                    priority: data.shipment.delivery_priority,
-                }
+                data
             );
         } catch (error) {
             console.error(
