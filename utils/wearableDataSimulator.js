@@ -56,9 +56,9 @@ export const startWearableSimulator = () => {
     );
     const deviceId = getRandomDeviceId(deviceIds);
     const data = generateWearableData(deviceId);
-    console.debug(
+    console.info(
       "startWearableSimulator: Wearable Data:",
-      JSON.stringify(data, null, 2),
+      data
     );
     publishKafka(JSON.stringify(data), data.deviceId);
   }, INTERVAL_MS);

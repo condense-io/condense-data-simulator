@@ -66,7 +66,7 @@ export const soilDataSimulatior = () => {
     const randomSensorId = getRandomSensor();
     const soilSensorData = simulateSoilSensor(randomSensorId);
 
-    console.debug("soilDataSimulator: Soil Sensor Data:", soilSensorData);
+    console.info("soilDataSimulator: Soil Sensor Data:", soilSensorData);
     publishKafka(JSON.stringify(soilSensorData), soilSensorData.sensorId);
   }, INTERVAL_MS); // every 5 seconds
 };

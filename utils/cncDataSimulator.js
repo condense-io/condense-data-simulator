@@ -57,6 +57,6 @@ export const cncSimulator = () => {
   setInterval(() => {
     const data = generateSensorData();
     publishKafka(JSON.stringify(data), data.machineId);
-    console.debug("cncSimulator: data:", JSON.stringify(data, null, 2));
+    console.info("cncSimulator: data:", data);
   }, INTERVAL_MS);
 };

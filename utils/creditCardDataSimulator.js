@@ -69,7 +69,7 @@ export const creditCardDataSimulator = () => {
   );
   setInterval(() => {
     const txn = generateTransaction();
-    console.debug("creditCardDataSimulator: Transaction:", txn);
+    console.info("creditCardDataSimulator: Transaction:", txn);
     publishKafka(JSON.stringify(txn), txn.user_id);
   }, INTERVAL_MS);
 };

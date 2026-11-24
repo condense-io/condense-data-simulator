@@ -55,7 +55,7 @@ const telematicsSimulator = () => {
   setInterval(() => {
     const vehicleId = getRandomItem(machineIds);
     const data = generateTelematicsData(vehicleId);
-    console.debug("telematicsSimulator: Telemetry Data:", data);
+    console.info("telematicsSimulator: Telemetry Data:", data);
     publishKafka(JSON.stringify(data), data.vehicleId);
   }, INTERVAL_MS);
   console.info("telematicsSimulator: Telemetry Data Simulator is running.\n");
