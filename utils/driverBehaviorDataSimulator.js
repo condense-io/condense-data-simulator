@@ -438,7 +438,7 @@ async function simulateDriverData() {
                 driver.asset_id
             );
 
-            await publishKafka(data, data.asset_id);
+            await publishKafka(JSON.stringify(data), data.asset_id);
 
             console.info(
                 `[DRIVER TELEMETRY] ${data.asset_id}`,

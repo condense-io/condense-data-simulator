@@ -496,7 +496,7 @@ async function simulateDeliveryData() {
                 vehicle.asset_id
             );
 
-            await publishKafka(data, data.asset_id);
+            await publishKafka(JSON.stringify(data), data.asset_id);
 
             const state = vehicleStates.get(vehicle.asset_id);
 
