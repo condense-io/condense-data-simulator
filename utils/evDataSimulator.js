@@ -468,7 +468,7 @@ async function simulateEVData() {
         try {
             const data = generateEVTelemetry(vehicle.asset_id);
 
-            await publishKafka(data, data.asset_id);
+            await publishKafka(JSON.stringify(data), data.asset_id);
 
             console.info(
                 `[EV TELEMETRY] ${data.asset_id}`,
